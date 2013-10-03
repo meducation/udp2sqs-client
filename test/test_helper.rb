@@ -1,4 +1,3 @@
 gem "minitest"
 require "minitest/autorun"
-require "udp2sqs_client"
-require "./client_test"
+require_relative "../lib/udp2sqs_client"
