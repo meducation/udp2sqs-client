@@ -1,6 +1,6 @@
 require 'socket'
 
-module Udp2sqs
+module Udp2sqsClient
 
   class Client
 
