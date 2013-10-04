@@ -12,6 +12,13 @@ class TestClient < Minitest::Test
     assert client.send("Hello World")
   end
 
+  def test_client_returns_false_if_bytes_are_different
+    client = Udp2sqsClient::Client.new(host: 'example.com')
+    UDPSocket.stub_any_instance(:send, 89) do 
+      refute client.send("Hello World")
+    end
+  end
+
   def test_client_with_bad_host_returns_false
     client = Udp2sqsClient::Client.new(host: 'naughty.example.com')
     refute client.send("Hello World")
@@ -24,5 +31,3 @@ class TestClient < Minitest::Test
     end
   end
 end
-
-
