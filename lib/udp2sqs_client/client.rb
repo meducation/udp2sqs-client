@@ -11,7 +11,7 @@ module Udp2sqsClient
       @port = options.fetch(:post, 9732)
     end
 
-    def send(message)
+    def send_message(message)
       begin
         s = UDPSocket.new
         bytes_sent = s.send(message, 0, host, port)
