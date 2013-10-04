@@ -26,7 +26,7 @@ class TestClient < Minitest::Test
 
   def test_client_with_bad_host_logs_error
     client = Udp2sqsClient::Client.new(host: 'naughty.example.com')
-    out, err = capture_io do
+    _, err = capture_io do
       client.send_message("Hello World")
     end
     assert_match("Udp2sqs failed to send : getaddrinfo:", err)
