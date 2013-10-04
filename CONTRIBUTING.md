@@ -9,6 +9,11 @@ Please file issues on the [GitHub issues list](https://github.com/meducation/udp
 
 If you want a feature implemented, the best way to get it done is to submit a pull request that implements it. Please make sure it has tests.
 
+You can run the tests with
+```
+rake test
+```
+
 If you've not contributed to a repository before - this is the accepted pattern to use:
 
 1. Fork it
