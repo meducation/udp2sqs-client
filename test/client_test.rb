@@ -26,8 +26,9 @@ class TestClient < Minitest::Test
 
   def test_client_with_bad_host_logs_error
     client = Udp2sqsClient::Client.new(host: 'naughty.example.com')
-    assert_output nil, "Udp2sqs failed to send : getaddrinfo: nodename nor servname provided, or not known\n" do
+    out, err = capture_io do
       client.send("Hello World")
     end
+    assert_match("Udp2sqs failed to send : getaddrinfo:", err)
   end
 end
