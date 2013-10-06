@@ -2,4 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
 script:
-  - rake test
+  - CODECLIMATE_REPO_TOKEN=f321482036321ccabaf3824b113ac9ff4ec6cfdc376781ebd98eb71c5f149065 bundle exec rake test
+addons:
+    code_climate:
+        repo_token: f321482036321ccabaf3824b113ac9ff4ec6cfdc376781ebd98eb71c5f149065
